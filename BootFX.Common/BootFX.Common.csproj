@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Authentication\**" />
+    <Compile Remove="Entities\CodeGeneration\**" />
+    <Compile Remove="Runtime\FileSystemPoller\**" />
+    <EmbeddedResource Remove="Authentication\**" />
+    <EmbeddedResource Remove="Entities\CodeGeneration\**" />
+    <EmbeddedResource Remove="Runtime\FileSystemPoller\**" />
+    <None Remove="Authentication\**" />
+    <None Remove="Entities\CodeGeneration\**" />
+    <None Remove="Runtime\FileSystemPoller\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+    <PackageReference Include="System.Diagnostics.EventLog" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,51 @@
+// BootFX - Application framework for .NET applications
+// 
+// File: LookupValueCollection.cs
+// Build: 5.0.61009.900
+// 
+// An open source project by Matthew Reynolds (@mbrit).  
+// Copyright 2001-2018 Matthew Reynolds, Red Piranha Labs Limited,
+// Elixia Solutions Limited.  All Rights Reserved.
+//
+// Licensed under the MIT license.
+
+using System;
+
+namespace BootFX.Common.Data
+{
+    using System;
+    using System.IO;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using System.Data;
+    using System.Collections;
+    using System.Collections.Specialized;
+    using BootFX.Common;
+    using BootFX.Common.Data;
+    using BootFX.Common.Entities;
+    using BootFX.Common.Entities.Attributes;
+    
+    
+    /// <summary>
+    /// Defines the collection for entities of type <see cref="LookupValue"/>.
+    /// </summary>
+    [Serializable()]
+    public class LookupValueCollection : LookupValueCollectionBase
+    {
+        
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public LookupValueCollection()
+        {
+        }
+        
+        /// <summary>
+        /// Deserialization constructor.
+        /// </summary>
+        protected LookupValueCollection(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) : 
+                base(info, context)
+        {
+        }
+    }
+}

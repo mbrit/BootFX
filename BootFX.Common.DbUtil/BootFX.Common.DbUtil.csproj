@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F172EB2-8B58-43AC-A8E2-BC6869AF6B40}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>BootFX.Common.DbUtil</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\!support\development.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BootFX.Common.DbUtil</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1572;1573;1591;1699</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1572;1573;1591</NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Name>System.Data.OracleClient</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.ico" />
+    <EmbeddedResource Include="Project\CheckoutDialog.resx">
+      <DependentUpon>CheckoutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\FolderViewDialog.resx">
+      <DependentUpon>FolderViewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\GenerateDialog.resx">
+      <DependentUpon>GenerateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Generator.resx">
+      <DependentUpon>Generator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\ScriptDialog.resx">
+      <DependentUpon>ScriptDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\SettingsDialog.resx">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\WhatFirst.resx">
+      <DependentUpon>WhatFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ChildToParentGenerate.ico" />
+    <EmbeddedResource Include="Resources\ChildToParents.ico" />
+    <EmbeddedResource Include="Resources\ColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\Columns.ico" />
+    <EmbeddedResource Include="Resources\EnumColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\Generate.ico" />
+    <EmbeddedResource Include="Resources\GenerateAndWs.ico" />
+    <EmbeddedResource Include="Resources\GenerateAndWsInternal.ico" />
+    <EmbeddedResource Include="Resources\GenerateInternal.ico" />
+    <EmbeddedResource Include="Resources\InternalColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\InternalEnumColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\InternalKeyColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\InternalNonColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\KeyColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\Logo.png" />
+    <EmbeddedResource Include="Resources\NonChildToParentGenerate.ico" />
+    <EmbeddedResource Include="Resources\NonColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\NonGenerate.ico" />
+    <EmbeddedResource Include="Resources\NonGenerateInternal.ico" />
+    <EmbeddedResource Include="Resources\PrivateColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\PrivateEnumColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\PrivateKeyColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\PrivateNonColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\ProtectedColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\ProtectedEnumColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\ProtectedInternalColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\ProtectedInternalEnumColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\ProtectedInternalKeyColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\ProtectedInternalNonColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\ProtectedKeyColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\ProtectedNonColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\PublicColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\PublicEnumColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\PublicKeyColumnGenerate.ico" />
+    <EmbeddedResource Include="Resources\PublicNonColumnGenerate.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeGeneration\CodeDomExtender.cs" />
+    <Compile Include="CodeGeneration\CompilationException.cs" />
+    <Compile Include="CodeGeneration\EntityCodeFileType.cs" />
+    <Compile Include="CodeGeneration\EntityCompilationOptions.cs" />
+    <Compile Include="CodeGeneration\EntityGenerationContext.cs" />
+    <Compile Include="CodeGeneration\EntityGenerator.cs" />
+    <Compile Include="CodeGeneration\GeneratedCode.cs" />
+    <Compile Include="CodeGeneration\GeneratedCompileUnit.cs" />
+    <Compile Include="CodeGeneration\GeneratedNamespace.cs" />
+    <Compile Include="CodeGeneration\GeneratedTypeDeclaration.cs" />
+    <Compile Include="CodeGeneration\GeneratorWrapper.cs" />
+    <Compile Include="CodeGeneration\IGeneratedCode.cs" />
+    <Compile Include="CodeGeneration\Language.cs" />
+    <Compile Include="CodeGeneration\MemberTarget.cs" />
+    <Compile Include="CodeGeneration\SqlColumnExtender.cs" />
+    <Compile Include="CodeGeneration\SqlMemberExtender.cs" />
+    <Compile Include="CodeGeneration\SqlTableExtender.cs" />
+    <Compile Include="Operation\OperationDialogProcess.cs" />
+    <Compile Include="Operation\ReloadSchemaOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProjectStore\FileProjectStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProjectStore\ProjectStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProjectStore\ProjectStoreCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProjectStore\ProjectStoreListItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Project\CheckoutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\CheckoutFileListItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Project\EmptyProjectMruMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Project\FolderViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\GenerateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\GenerateEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Project\Generator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\LocalSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Project\Project.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Project\ProjectLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Project\ProjectMruMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Project\ScriptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Project\SettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\WhatFirst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Runtime\DbUtilRuntime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\SqlChildToParentLinkNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\SqlChildToParentLinksNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\SqlColumnNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\SqlColumnsNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\SqlMemberNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\SqlProcedureNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\SqlProceduresNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\SqlTableNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UiCommon\Commands\Bundles\CommandBundle.cs" />
+    <Compile Include="UiCommon\Commands\Bundles\CommandBundleAttribute.cs" />
+    <Compile Include="UiCommon\Commands\ClickContext\CommandClickContextBase.cs" />
+    <Compile Include="UiCommon\Commands\ClickContext\ICommandClickContext.cs" />
+    <Compile Include="UiCommon\Commands\Command.cs" />
+    <Compile Include="UiCommon\Commands\CommandCollection.cs" />
+    <Compile Include="UiCommon\Commands\CommandEventArgs.cs" />
+    <Compile Include="UiCommon\Commands\CommandFireContextBase.cs" />
+    <Compile Include="UiCommon\Commands\CommandFlags.cs" />
+    <Compile Include="UiCommon\Commands\CommandViewContext.cs" />
+    <Compile Include="UiCommon\Commands\CommonCommand.cs" />
+    <Compile Include="UiCommon\Commands\CommonCommandEventArgs.cs" />
+    <Compile Include="UiCommon\Commands\CommonCommandHandler.cs" />
+    <Compile Include="UiCommon\Commands\ICommandProvider.cs" />
+    <Compile Include="UiCommon\DataBinding\ConstraintControlSupportFlags.cs" />
+    <Compile Include="UiCommon\DataBinding\EntityListItem.cs" />
+    <Compile Include="UiCommon\DataBinding\IBindableControl.cs" />
+    <Compile Include="UiCommon\DataBinding\IConstraintControl.cs" />
+    <Compile Include="UiCommon\DataBinding\IDataControlBase.cs" />
+    <Compile Include="UiCommon\EntityView\IEntityView.cs" />
+    <Compile Include="UiCommon\FormChecker\ControlReference.cs" />
+    <Compile Include="UiCommon\FormChecker\FormChecker.cs" />
+    <Compile Include="UiCommon\FormChecker\FormHelper.cs" />
+    <Compile Include="UiCommon\General\ApplyReason.cs" />
+    <Compile Include="UiCommon\General\AuthenticateUserEventArgs.cs" />
+    <Compile Include="UiCommon\General\ChangeAction.cs" />
+    <Compile Include="UiCommon\General\FormatEventArgs.cs" />
+    <Compile Include="UiCommon\General\IDialog.cs" />
+    <Compile Include="UiCommon\General\SmartErrorHandlingType.cs" />
+    <Compile Include="UiCommon\General\ValueFormatter.cs" />
+    <Compile Include="UiCommon\Images\ImageLibrary.cs" />
+    <Compile Include="UiCommon\Layout\LayoutHint.cs" />
+    <Compile Include="UiCommon\Printing\PrintDocumentBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiCommon\SimpleMarkup\FormatLinkEventArgs.cs" />
+    <Compile Include="UiCommon\SimpleMarkup\SimpleMarkupRendererBase.cs" />
+    <Compile Include="UiCommon\SimpleMarkup\UrlEventArgs.cs" />
+    <Compile Include="UiCommon\Usability\GridSettings\GridSettings.cs" />
+    <Compile Include="UiCommon\Usability\GridSettings\GridSettingsColumn.cs" />
+    <Compile Include="UiCommon\Usability\GridSettings\GridSettingsColumnCollection.cs" />
+    <Compile Include="UiDesktop\Alert\Alert.cs" />
+    <Compile Include="UiDesktop\Alert\AlertFlags.cs" />
+    <Compile Include="UiDesktop\Alert\PublishException.cs" />
+    <Compile Include="UiDesktop\Commands\CommandMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Commands\CommandUIObjectBuilder.cs" />
+    <Compile Include="UiDesktop\Commands\DesktopCommand.cs" />
+    <Compile Include="UiDesktop\Commands\DesktopCommandClickContext.cs" />
+    <Compile Include="UiDesktop\Commands\OwnerDrawMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\BaseControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\DataPanel\DataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\DialogBar\DialogBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\DialogCaption\DialogCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityBox\EntityBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityComboBox\EntityComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityListViewFilterWidget\EntityListViewFilterWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityListView\EntityListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityListView\EntityListViewColumnHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityListView\EntityListViewComparer.cs" />
+    <Compile Include="UiDesktop\Controls\EntityListView\EntityListViewItem.cs" />
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\DateTimePickerMemberEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\EntityBoxMemberEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\EntityComboBoxMemberEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\EntityMemberBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\EnumComboBoxMemberEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\IMemberEditor.cs" />
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\LabelPosition.cs" />
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\MemberEditorEventArgs.cs" />
+    <Compile Include="UiDesktop\Controls\EntityMemberBox\TextBoxMemberEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EnumComboBox\EnumComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\EnumComboBox\EnumComboBoxListItem.cs" />
+    <Compile Include="UiDesktop\Controls\General\ControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\General\GraduatedBackground.cs" />
+    <Compile Include="UiDesktop\Controls\General\PaintHelper.cs" />
+    <Compile Include="UiDesktop\Controls\ImageListEx\IconSize.cs" />
+    <Compile Include="UiDesktop\Controls\ImageListEx\ImageListEx.cs" />
+    <Compile Include="UiDesktop\Controls\ListViewEx\ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\ListViewHelper\ListViewHelper.cs" />
+    <Compile Include="UiDesktop\Controls\Nodes\DemandLoadTreeNode.cs" />
+    <Compile Include="UiDesktop\Controls\Nodes\ObjectTreeNode.cs" />
+    <Compile Include="UiDesktop\Controls\Nodes\ObjectTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\Nodes\ObjectTreeViewBuddyListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\Nodes\TreeNodeCollectionWrapper.cs" />
+    <Compile Include="UiDesktop\Controls\Nodes\TreeNodeListViewItem.cs" />
+    <Compile Include="UiDesktop\Controls\OperationBox\OperationBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\TypeAheadComboBox\TypeAheadComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Controls\VcrButtons\VcrButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\DataBinding\BindingBase.cs" />
+    <Compile Include="UiDesktop\DataBinding\EntityBindingManager.cs" />
+    <Compile Include="UiDesktop\DataBinding\EntityFieldBinding.cs" />
+    <Compile Include="UiDesktop\DataBinding\EntityLinkBinding.cs" />
+    <Compile Include="UiDesktop\DataBinding\EntityMemberBinding.cs" />
+    <Compile Include="UiDesktop\DataBinding\EntityPropertyBinding.cs" />
+    <Compile Include="UiDesktop\DataBinding\IDataControl.cs" />
+    <Compile Include="UiDesktop\DataBinding\IDesktopBindableControl.cs" />
+    <Compile Include="UiDesktop\DataBinding\IEntityDataControl.cs" />
+    <Compile Include="UiDesktop\Dialogs\About\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\AuthenticationDialog\AuthenticationDialog.cs" />
+    <Compile Include="UiDesktop\Dialogs\ChangePasswordDialog\ChangePasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\ChoosePathDialog\ChooseFolderPathDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\DatabaseConnections\ConnectionStringDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\DatabaseConnections\ConnectionType.cs" />
+    <Compile Include="UiDesktop\Dialogs\DatabaseConnections\ConnectToDatabaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\DatabaseConnections\PickCatalogDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\DatabaseMaintenanceDialog\DatabaseMaintenanceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\DatabaseUpdateDialog\DatabaseUpdateCheckResultsEventArgs.cs" />
+    <Compile Include="UiDesktop\Dialogs\DatabaseUpdateDialog\DatabaseUpdateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\DatabaseUpdateDialog\DatabaseUpdateOperation.cs" />
+    <Compile Include="UiDesktop\Dialogs\DatabaseUpdateDialog\DatabaseUpdateTbdDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\DatabaseUpdateDialog\DatabaseUpdateThread.cs" />
+    <Compile Include="UiDesktop\Dialogs\EditConnectionsDialog\EditConnectionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\EntityPickerDialog\EntityPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\EntitySearchControl\EntitySearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\EntitySearchControl\EntitySearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\EntitySearchControl\EntitySearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\EntitySetDialog\EntitySetDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\FloatingOperationDialog\FloatingOperationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\FloatingOperationDialog\FloatingOperationDialogBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\General\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\General\Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\General\FormPosition.cs" />
+    <Compile Include="UiDesktop\Dialogs\LogonDialog\ConnectionSettingsListItem.cs" />
+    <Compile Include="UiDesktop\Dialogs\LogonDialog\LogonDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\OperationDialog\OperationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\OperationDialog\OperationDialogProcess.cs" />
+    <Compile Include="UiDesktop\Dialogs\OptionDialog\OptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\OptionDialog\OptionDialogButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\Properties\IPropertyPage.cs" />
+    <Compile Include="UiDesktop\Dialogs\Properties\PropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\Properties\PropertyPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\Properties\PropertyPageAttribute.cs" />
+    <Compile Include="UiDesktop\Dialogs\Properties\PropertyTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Dialogs\Properties\PropertyTabPageCollection.cs" />
+    <Compile Include="UiDesktop\Dialogs\WebProxyDialog\WebProxyDialog.cs" />
+    <Compile Include="UiDesktop\Forms\DataForm\DataDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Forms\DataForm\DataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Forms\FormRegister\FormCollection.cs" />
+    <Compile Include="UiDesktop\Forms\FormRegister\FormEventArgs.cs" />
+    <Compile Include="UiDesktop\Forms\FormRegister\FormRegister.cs" />
+    <Compile Include="UiDesktop\General\Sound.cs" />
+    <Compile Include="UiDesktop\General\SystemSound.cs" />
+    <Compile Include="UiDesktop\Runtime\DesktopResourceHelper.cs" />
+    <Compile Include="UiDesktop\Runtime\DesktopRuntime.cs" />
+    <Compile Include="UiDesktop\Runtime\DesktopRuntimeNotStartedException.cs" />
+    <Compile Include="UiDesktop\Runtime\IconType.cs" />
+    <Compile Include="UiDesktop\Runtime\ResultEventArgs.cs" />
+    <Compile Include="UiDesktop\Runtime\Startup.cs" />
+    <Compile Include="UiDesktop\Runtime\ThreadUIHelper.cs" />
+    <Compile Include="UiDesktop\UI\UIFixer.cs" />
+    <Compile Include="UiDesktop\Windows\TraceWindow\LineEventArgs.cs" />
+    <Compile Include="UiDesktop\Windows\TraceWindow\TraceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiDesktop\Windows\TraceWindow\TraceWindowListener.cs" />
+    <Compile Include="View\SqlChildToParentLinkView.cs" />
+    <Compile Include="View\SqlColumnView.cs" />
+    <Compile Include="View\SqlMemberView.cs" />
+    <Compile Include="View\SqlTableView.cs" />
+    <Compile Include="View\ViewItemFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="UiCommon\Resources\Strings.resx" />
+    <EmbeddedResource Include="UiDesktop\Commands\CommandMenuItem.resx">
+      <DependentUpon>CommandMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\DataPanel\DataPanel.resx">
+      <DependentUpon>DataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\DialogBar\DialogBar.resx">
+      <DependentUpon>DialogBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\DialogCaption\DialogCaption.resx">
+      <DependentUpon>DialogCaption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityBox\EntityBox.resx">
+      <DependentUpon>EntityBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityComboBox\EntityComboBox.resx">
+      <DependentUpon>EntityComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityListViewFilterWidget\EntityListViewFilterWidget.resx">
+      <DependentUpon>EntityListViewFilterWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityListView\EntityListView.resx">
+      <DependentUpon>EntityListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityMemberBox\DateTimePickerMemberEditor.resx">
+      <DependentUpon>DateTimePickerMemberEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityMemberBox\EntityBoxMemberEditor.resx">
+      <DependentUpon>EntityBoxMemberEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityMemberBox\EntityComboBoxMemberEditor.resx">
+      <DependentUpon>EntityComboBoxMemberEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityMemberBox\EntityMemberBox.resx">
+      <DependentUpon>EntityMemberBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\EntityMemberBox\EnumComboBoxMemberEditor.resx">
+      <DependentUpon>EnumComboBoxMemberEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\General\ControlBase.resx">
+      <DependentUpon>ControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\Nodes\ObjectTreeView.resx">
+      <DependentUpon>ObjectTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\Nodes\ObjectTreeViewBuddyListView.resx">
+      <DependentUpon>ObjectTreeViewBuddyListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\OperationBox\OperationBox.resx">
+      <DependentUpon>OperationBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Controls\VcrButtons\VcrButtons.resx">
+      <DependentUpon>VcrButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\About\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\AuthenticationDialog\AuthenticationDialog.resx">
+      <DependentUpon>AuthenticationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\ChangePasswordDialog\ChangePasswordDialog.resx">
+      <DependentUpon>ChangePasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\ChoosePathDialog\ChooseFolderPathDialog.resx">
+      <DependentUpon>ChooseFolderPathDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\DatabaseConnections\ConnectionStringDialog.resx">
+      <DependentUpon>ConnectionStringDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\DatabaseConnections\ConnectToDatabaseDialog.resx">
+      <DependentUpon>ConnectToDatabaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\DatabaseConnections\PickCatalogDialog.resx">
+      <DependentUpon>PickCatalogDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\DatabaseMaintenanceDialog\DatabaseMaintenanceDialog.resx">
+      <DependentUpon>DatabaseMaintenanceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\DatabaseUpdateDialog\DatabaseUpdateDialog.resx">
+      <DependentUpon>DatabaseUpdateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\DatabaseUpdateDialog\DatabaseUpdateTbdDialog.resx">
+      <DependentUpon>DatabaseUpdateTbdDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\EditConnectionsDialog\EditConnectionsDialog.resx">
+      <DependentUpon>EditConnectionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\EntityPickerDialog\EntityPickerDialog.resx">
+      <DependentUpon>EntityPickerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\EntitySearchControl\EntitySearchControl.resx">
+      <DependentUpon>EntitySearchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\EntitySearchControl\EntitySearchDialog.resx">
+      <DependentUpon>EntitySearchDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\EntitySearchControl\EntitySearchForm.resx">
+      <DependentUpon>EntitySearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\EntitySetDialog\EntitySetDialog.resx">
+      <DependentUpon>EntitySetDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\FloatingOperationDialog\FloatingOperationDialog.resx">
+      <DependentUpon>FloatingOperationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\FloatingOperationDialog\FloatingOperationDialogBar.resx">
+      <DependentUpon>FloatingOperationDialogBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\General\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\General\Dialog.resx">
+      <DependentUpon>Dialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\LogonDialog\LogonDialog.resx">
+      <DependentUpon>LogonDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\OperationDialog\OperationDialog.resx">
+      <DependentUpon>OperationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\OptionDialog\OptionDialog.resx">
+      <DependentUpon>OptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\Properties\PropertiesDialog.resx">
+      <DependentUpon>PropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\Properties\PropertyTabPage.resx">
+      <DependentUpon>PropertyTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Dialogs\WebProxyDialog\WebProxyDialog.resx">
+      <DependentUpon>WebProxyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Forms\DataForm\DataDialog.resx">
+      <DependentUpon>DataDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Forms\DataForm\DataForm.resx">
+      <DependentUpon>DataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiDesktop\Resources\Strings.resx" />
+    <EmbeddedResource Include="UiDesktop\Windows\TraceWindow\TraceWindow.resx">
+      <DependentUpon>TraceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\PublicColumnGenerateDto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\PublicEnumColumnGenerateDto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\PublicKeyColumnGenerateDto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\PublicNonColumnGenerateDto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GenerateDto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ChildToParentGenerateDto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BootFX.Common\BootFX.Common.csproj">
+      <Project>{54348fe2-0e4d-4ab6-8cb3-7a1a7ebc6d18}</Project>
+      <Name>BootFX.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UiCommon\Resources\Mbr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UiDesktop\Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>c:\sluice\bootfx.common.sluice.exe $(SolutionName) $(ProjectName) $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
+</Project>
